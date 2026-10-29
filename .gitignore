@@ -1,0 +1,77 @@
+﻿# --- Python / venvs (rebuild from widget/requirements.txt; venvs do not survive moves)
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# --- Audio and data: never in git. Training data, runtime logs and test audio live in
+#     R:\data\EagleEar\ (outside this repo). Tuned models/adapters never go in the repo.
+*.wav
+*.flac
+*.mp3
+*.m4a
+*.ogg
+*.opus
+*.aac
+*.wma
+*.webm
+# training manifests, eval sets and model artefacts in any form (log 55)
+*.jsonl
+*.onnx
+*.gguf
+*.npz
+*.npy
+*.bin
+eval-sets/
+adapters/
+data/
+training-data/
+runtime-logs/
+models/
+*.nemo
+*.safetensors
+*.ckpt
+*.pt
+
+# --- Machine-specific widget state (window position, mic, settings, data_dir)
+widget/config.json
+widget/config.json.tmp
+widget/config.json.corrupt-*
+widget/selftest-result*.json
+widget/screenshot*.png
+
+# --- Backups made while editing (kept on disk, not tracked)
+*.bak
+*.bak-*
+*.tmp
+# ...except the install history, which is a verbatim reference copy (it contains no audio)
+# ...but never audio, models or training data, not even there (the line above re-includes them; log 55)
+docs/install-history/**/*.wav
+docs/install-history/**/*.flac
+docs/install-history/**/*.mp3
+docs/install-history/**/*.m4a
+docs/install-history/**/*.ogg
+docs/install-history/**/*.opus
+docs/install-history/**/*.nemo
+docs/install-history/**/*.safetensors
+docs/install-history/**/*.ckpt
+docs/install-history/**/*.pt
+docs/install-history/**/*.jsonl
+docs/install-history/**/training-data/
+
+# --- Editors / OS
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+
+# --- Public repo: local-only history, editing backups and private notes stay on disk
+*.orig
+*.orig-*
+*.orig2
+*-bak
+docs/install-history/
+docs/BUILDER-BRIEF.md
+widget/icons/old-2026-10-07/
+docs/screenshots/screenshot-tray*.png
+docs/screenshots/screenshot-taskbar.png
